@@ -1,7 +1,5 @@
 def product_chart(request):
-    """
-    this function show all product count in each state of inda.
-    """
+   
     dataSource = OrderedDict()
     mapConfig = OrderedDict()
     mapConfig["caption"] = "Product Information"
@@ -77,5 +75,5 @@ def product_chart(request):
     dataSource["colorrange"] = colorDataObj
     dataSource["data"] = data
     fusionMap = FusionCharts("maps/india", "ex1", "400", "600", "chart-1", "json", dataSource)
-    return render(request, 'Ecom/product_map.html', {'output': fusionMap.render(), 'data': final_product_dict})
+    return render(request, 'map.html', {'output': fusionMap.render(), 'data': final_product_dict})
 
